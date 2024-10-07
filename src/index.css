@@ -1,13 +1,372 @@
-body {
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+.font{
+  font-size: 1.1vw;
+}
+.shadow{
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  box-shadow: inset rgba(31, 31, 47, 0.1) 0px 4px 16px 0px inset, rgba(17, 17, 26, 0.05) 0px 8px 32px 0px;
+
+}
+.sd{
+  border-radius: 5%;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  box-shadow:inset rgba(245, 245, 246, 0.555) 0px 4px 16px 0px inset, rgba(17, 17, 26, 0.05) 0px 8px 32px 0px;
+
+
+}
+
+/* Set body and html to take full viewport */
+html, body {
+  box-shadow: rgba(245, 245, 246, 0.555) 0px 4px 16px 0px inset, rgba(17, 17, 26, 0.05) 0px 8px 32px 0px;
+
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.section {
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+}
+/* Make sure any section or component doesn't exceed the viewport */
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+bg{
+  background-color: #08000f;
+background-image: linear-gradient(135deg, #08000f 0%, #561e70 19%, #43255a 39%, #671b90 60%, #3d2949 80%, #0e0e0f 100%);
+
+}
+.shade{
+  box-shadow: rgba(23, 23, 25, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+   .icons{
+    width: 40vw;
+    display: flex;
+   
+    background-color:white;
+    flex-wrap: wrap;
+    border-radius: 2vw;
+    justify-content: center;
+    padding: 5.1%;
+    gap: 1.4vw;
+    
+    /* animation: icon 10s linear infinite;
+    transition: all;
+    animation-direction: alternate-reverse;
+    animation-fill-mode: both; */
+
+
+    
+  } 
+ 
+  .png
+{
+  width: 6vw;
+  height: 6vw;
+ 
+  
+}
+.png:hover{
+  transform: scale(1.5);
+
+}
+@keyframes icon  {
+
+  
+    0%{transform: translateX(100%);}
+
+    50%{transform:translateX(-10%)}
+  
+  
+}
+.content{
+  height: auto;
+  width: 50vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  gap: 1.4vw;
+}
+.pimage{
+  height: 19vw;
+  width: 50vw;
+  display: flex;
+  flex-direction:row;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  
+}
+.size{
+  height:99%;
+  width: 80%;
+  position: relative;
+  border-radius: 6px;
+
+}
+.click{
+  height:99%;
+  width: 80%;
+  position: relative;
+  border-radius: 6px;
+
+}
+
+.click::after {
+  content: "Click Me";
+  position: absolute;
+  height:99%;
+  width: 80%;
+  background-color: rgba(10, 10, 10, 0.59);
+ text-align: center;
+ padding-top: 21%;
+ color: white;
+ font-size: 20px;
+ border-radius: 6px;
+ display: none;
+ font-weight: 600;
+}
+
+.click:hover::after {
+  display: block; /* Show text on hover */
+}
+
+.user{
+  width: 32vw;
+  /* height: 50vh; */
+  display: flex;
+  flex-direction: column;
+  gap: 0.9vw;
+  padding: 3%;
+  border-radius: 5%;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+.user input{
+  height: 6vh;
+  border-radius: 1.1vw;
+  font-size: 1.3vw;
+  padding: 1.2vw;
+  box-shadow: rgba(245, 245, 246, 0.555) 0px 4px 16px 0px inset, rgba(17, 17, 26, 0.05) 0px 8px 32px 0px;
+
+}
+.user p{
+  font-size: 1.3vw;
+  padding-left: 1.2vw;
+  font-weight: 550;
+  color: rgb(72, 12, 91);
+
+}
+textarea{
+  height: 14vh;
+  border-radius: 1.01vw;
+  font-size: 1.3vw;
+  padding: 1.2vw;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px 0px inset, rgba(17, 17, 26, 0.05) 0px 8px 32px 0px;
+}
+.user button{
+  width: 6.5vw;
+  background-color: rgb(102, 14, 131);
+  padding: 2%;
+  font-size: 1.3;
+  font-weight: 550;
+  border-radius: 8%;
+  margin: auto;
+  margin-top: 6%;
+  color: white;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+
+}
+
+.user button:hover{
+  background-color: rgba(234, 55, 234, 0.486);
+  color:purple
+}
+.touch img{
+  width: 2.2vw;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+padding:0.2vw;
+margin-top: 1.2vw;
+}
+
+.color{
+  color: rgb(186, 45, 233);
+  font-weight: 600;
+
+}
+
+
+
+/* media quries */
+
+@media (max-width:900px)
+{
+  .font{
+    font-size: 2.8vw;
+  }
+
+  #home{
+    width: 100vw;
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  #home .one{
+    width: 100%;
+    justify-content: start;
+  }
+  #home .two{
+    width: 100%;
+    justify-content: start;
+  }
+
+
+  #about .aboutdiv{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    justify-content: center;
+    gap: 1.9vw;
+  }
+  #about .aboutdiv .img{
+    width: 100%;
+  }
+  #about .aboutdiv .img img{
+    width:35%;
+  }
+  #about .aboutdiv .details{
+    width: 100%;
+  }
+
+  #skills .box {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    width: 100vw;
+  }
+  #skills {
+    width: 100vw;
+    padding-top: 15vw;
+
+
+  }
+  #skills .box .skilldata{
+    width: 100%;
+  }
+
+  #skills .box .icon{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  #skills .box .icon .icons{
+    width: 75%;
+  }
+  #projecs{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+
+  }
+  .project{
+    display: flex;
+    flex-direction: column-reverse;
+    width: 100%;
+    gap: 0%;
+    
+  }
+  .project .content{
+    width: 100%;
+    height: auto;
+    border-radius: 5%;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    box-shadow:inset rgba(245, 245, 246, 0.555) 0px 4px 16px 0px inset, rgba(17, 17, 26, 0.05) 0px 8px 32px 0px;
+    border-top-left-radius: 0%;
+    border-top-right-radius: 0%;
+ padding: 3vw 4vw;
+  }
+  .project .pimage{
+    margin-top: 3vw;
+    width: 100%;
+    height: auto;
+  }
+  .project .pimage .size{
+    width:100% ;
+    height: 100%;
+    border-bottom-left-radius:0%;
+    border-bottom-right-radius: 0%;
+  }
+  .project .pimage .click{
+    width:100% ;
+    height: 100%;
+    border-bottom-left-radius:0%;
+    border-bottom-right-radius: 0%;
+  }
+  .click::after{
+    width:100% ;
+    height: 100%;
+    border-bottom-left-radius:0%;
+    border-bottom-right-radius: 0%;
+  }
+  #contact{
+    width: 100%;
+    height: auto;
+  }
+  #contact .contact{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  #contact .contact .left{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    width: 100%;
+    height: 40vh;
+    border-radius: 5%;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    box-shadow:inset rgba(245, 245, 246, 0.555) 0px 4px 16px 0px inset, rgba(17, 17, 26, 0.05) 0px 8px 32px 0px;
+
+  }
+  #contact .contact .left .touch img{
+      width: 5vw;
+  }
+  #contact .contact .right{
+    width: 100%;
+  }
+  #contact .contact .right .user{
+    width:100% ;
+  }
+  .user p{
+  font-size: 2.4vh;  
+  }
+  .user input,textarea{
+    font-size: 2.4vh;
+  }
+  .user button{
+    width: 21vw;
+    font-size: 2.0vh;
+
+  }
+  .section{
+    width:100vw;
+    height: auto;
+  }
 }
